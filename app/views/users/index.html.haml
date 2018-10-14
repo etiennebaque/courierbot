@@ -1,7 +1,7 @@
 %h3 Users
 
 - if @users.present?
-  %table.table
+  %table.table.table-striped
     %thead
       %tr
         %th{scope: 'col'}
@@ -15,7 +15,7 @@
         %tr
           %td= user.name
           %td= user.phone_number
-          %td= user.deployment.city
+          %td= user.deployment.description
 
 - else
   There is no registered user at the moment.
