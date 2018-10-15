@@ -55,6 +55,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "haml-rails", "~> 1.0"
   gem 'pry-byebug'
+  gem 'awesome_print'
 end
 
 
