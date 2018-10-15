@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post 'sms/receive'
   resources :users
 
   root 'home#index'
