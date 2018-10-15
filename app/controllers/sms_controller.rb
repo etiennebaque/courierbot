@@ -8,7 +8,7 @@ class SmsController < ApplicationController
     from_number = params["From"]
 
     analyzer = Twilio::Analyzer.new(sms: params)
-    analyzer.read_sms_and_create_report!
+    analyzer.read_sms_and_create_message!
 
     messenger = Twilio::Messenger.new(recipient: analyzer.sender, message: analyzer.response)
     messenger.send
