@@ -1,3 +1,3 @@
-class Help < Report
+class Help < Message
 
 end

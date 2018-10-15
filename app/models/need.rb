@@ -1,3 +1,3 @@
-class Need < Report
+class Need < Message
 
 end
