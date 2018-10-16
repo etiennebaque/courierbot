@@ -10,5 +10,8 @@
   %body
     = render 'shared/navigation'
 
+    %p.notice= notice
+    %p.alert= alert
+
     .container#main-content
       = yield
