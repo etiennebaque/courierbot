@@ -10,8 +10,11 @@
   %body
     = render 'shared/navigation'
 
-    %p.notice= notice
-    %p.alert= alert
-
     .container#main-content
+      - if notice.present?
+        .alert.alert-success.alert-dismissable.fade.show{role: 'alert'}
+          = notice
+          %button{type: 'button', class: 'close', 'data-dismiss': 'alert', 'aria-label': 'Close'}
+            %span{'aria-hidden': 'true'} &times;
+
       = yield
