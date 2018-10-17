@@ -1,6 +1,6 @@
 module Twilio
   class Analyzer
-    attr_accessor :sms, :sender, :response
+    attr_accessor :sms, :sender, :response, :message
 
     def initialize(sms: nil)
       @sms = sms
@@ -19,11 +19,9 @@ module Twilio
         description = full_message.split[1..full_message.length].join(' ')
         action = action_class.new(user: user, description: description)
         action.process!
+        @message = action
         @response = action.response
       end
-
-
     end
-
   end
 end

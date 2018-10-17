@@ -13,5 +13,10 @@ class SmsController < ApplicationController
     messenger = Twilio::Messenger.new(recipient: analyzer.sender, message: analyzer.response)
     messenger.send
 
+    message = analyzer.message
+
+    ActionCable.server.broadcast 'user_message_need',
+      description: message.description
+
   end
 end
