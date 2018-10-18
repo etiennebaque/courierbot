@@ -1,22 +1,33 @@
-%h3 Users
+%section#user-list
+  %h3 Users
 
-- if @users.present?
-  %table.table.table-striped
-    %thead
-      %tr
-        %th{scope: 'col'}
-          Name
-        %th{scope: 'col'}
-          Phone number
-        %th{scope: 'col'}
-          Deployment
-    %tbody
-      - @users.each do |user|
+  - if @users.present?
+    %table.table.table-striped
+      %thead
         %tr
-          %td= user.name
-          %td= user.phone_number
-          %td= user.deployment.description
+          %th{scope: 'col'}
+            Name
+          %th{scope: 'col'}
+            Phone number
+          %th{scope: 'col'}
+            Deployment
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= user.name
+            %td= user.phone_number
+            %td= user.deployment.description
 
-- else
-  There is no registered user at the moment.
+  - else
+    There is no registered user at the moment.
 
+%section#new-user
+  %h4 Create a new user
+
+  .container
+    .row
+      .col-12.col-md-6
+        = simple_form_for(User.new) do |f|
+          = f.input :name, label: 'Name', error: 'The name is mandatory, please specify one'
+          = f.input :phone_number, placeholder: 'eg. +16471112222'
+          = f.button :submit, id: 'submit-new-user', class: 'btn btn-primary'
