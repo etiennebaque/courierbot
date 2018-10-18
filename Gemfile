@@ -40,6 +40,7 @@ gem 'haml'
 gem 'twilio-ruby'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'devise'
 
 group :development, :test do
