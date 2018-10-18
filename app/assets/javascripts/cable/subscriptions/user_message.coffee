@@ -3,11 +3,12 @@ App.cable.subscriptions.create { channel: "UserMessageChannel" },
     @appendLine(data)
 
   appendLine: (data) ->
-    #html = @createLine(data)
-    $("<tr><td>#{data.description}</td></tr>").prependTo '#need-table > tbody'
+    html = @createLine(data)
+    $(html).prependTo "##{data.type}-table > tbody"
+    $("##{data.id}").effect("highlight", {color: "#{data.highlight}"}, 2000)
 
   createLine: (data) ->
-    data["description"]
+    "<tr id='#{data.id}'><td>#{data.description} <span class='user-city-note'>(sent by #{data.username})</span></td></tr>"
 
 
 # App.cable.subscriptions.create { channel: "UserMessageChannel", room: "Request" }
