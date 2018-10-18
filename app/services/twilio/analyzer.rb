@@ -28,6 +28,7 @@ module Twilio
                                    highlight: highlight,
                                    description: @message.description,
                                    username: @sender.name,
+                                   city: @sender.deployment.city,
                                    type: @message.class.name.downcase)
     end
   end
