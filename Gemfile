@@ -61,6 +61,7 @@ group :development do
   gem 'awesome_print'
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.4", require: false
+  gem 'capistrano-rbenv', '~> 2.1'
 end
 
 
