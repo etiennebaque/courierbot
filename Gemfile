@@ -59,6 +59,8 @@ group :development do
   gem "haml-rails", "~> 1.0"
   gem 'pry-byebug'
   gem 'awesome_print'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.4", require: false
 end
 
 
