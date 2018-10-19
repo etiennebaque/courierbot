@@ -1,10 +1,10 @@
 %section#intro
-  %p Courier bot is a simple chatbot demo developed as a personal project. Its aim is to experiment technologies enabling users to send text messages to this website for quick and easy reporting.
-
-  %p Here what to do to get started:
+  %p Courier bot is a simple chatbot demo. Its aim is to enable users to send text messages to this website for quick and easy reporting. To get started: 
   %ul
-    %li Click on "Users" and add your name as well as your phone number. You can also choose a deployment.
-    %li Follow the instructions in the "Send a report" section underneath.
+    %li= "Click on #{ link_to 'Users', users_url } and add your name as well as your phone number. You can also choose a deployment site.".html_safe
+    %li Text 'help me' to +15799771147 to see available commands.
+    %li Start sending text messages to that same number and see them showing up underneath automatically.
+    %li Once you're done, click on this link to reset the database and delete the info you entered: ...
 
 %section#needs-reports
   %h4 Needs & Reports
