@@ -22,4 +22,5 @@ test:
 
 production:
   <<: *default
+  secret_key_base: 4f7557f363bd7e94c0448795a96b6b368801a845500685295da4615da727beea975984d2e120d9c2db012fa1e324655e7265e4cb38516a395e88f0d4470a81ee
   database: db/production.sqlite3
