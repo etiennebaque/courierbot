@@ -22,4 +22,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV.fetch("COURIERBOT_PROD_DB_PATH") %>
+  database: db/production.sqlite3
