@@ -5,7 +5,6 @@ class Need < Message
 
   def process!
     save!
-
   end
 
   def response
