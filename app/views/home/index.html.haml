@@ -1,10 +1,15 @@
 %section#intro
-  %p Courier bot is a simple chatbot demo. Its aim is to enable users to send text messages to this website for quick and easy reporting. To get started: 
+  %p Courier bot is a simple chatbot demo. Its aim is to enable frontliners to send text messages for quick and easy reporting to admins. To get started:
   %ul
-    %li= "Click on #{ link_to 'Users', users_url } and add your name as well as your phone number. You can also choose a deployment site.".html_safe
-    %li Text 'help me' to +15799771147 to see available commands.
-    %li Start sending text messages to that same number and see them showing up underneath automatically.
-    %li Once you're done, click on this link to reset the database and delete the info you entered: ...
+    %li= "As a admin, register the frontliner (their name and phone number):"
+    %li.simple-user-form
+      = simple_form_for User.new, method: :post, html: {class: 'form-inline'} do |f|
+        = f.input :name, label: 'Name: ', class: 'form-control mb-2 mr-sm-2'
+        = f.input :phone_number, label: 'Phone number: ', placeholder: 'eg. +12223334444', class: 'form-control mb-2 mr-sm-2'
+        = f.button :submit, 'Register', id: 'submit-new-user', class: 'btn btn-primary'
+    %li Then as a frontliner, text 'help me' to +15799771147 to see available commands.
+    %li Start sending text messages (commands) to that same number and see them showing up underneath automatically.
+    %li= "Once you're done, go to the #{ link_to "User page", users_url } to delete the information you entered.".html_safe
 
 %section#needs-reports
   %h4 Needs & Reports

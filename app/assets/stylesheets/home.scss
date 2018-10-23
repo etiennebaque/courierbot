@@ -4,6 +4,17 @@
 
 #intro {
   padding-bottom: 20px;
+
+  .simple-user-form {
+    list-style-type: none;
+
+    label {
+      margin-right: 8px;
+    }
+    input {
+      margin-right: 8px;
+    }
+  }
 }
 
 #needs-reports {
