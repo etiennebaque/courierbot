@@ -9,7 +9,6 @@
         = f.button :submit, 'Register', id: 'submit-new-user', class: 'btn btn-primary'
     %li Then as a frontliner, text 'help me' to +15799771147 to see available commands.
     %li Start sending text messages (commands) to that same number and see them showing up underneath automatically.
-    %li= "Once you're done, go to the #{ link_to "User page", users_url } to delete the information you entered.".html_safe
 
 %section#needs-reports
   %h4 Needs & Reports
@@ -34,4 +33,9 @@
             - Report.all.each do |report|
               %tr
                 %td= report.description
+
+%hr
+
+%section#last-words
+  %p= "Once you're done, go to the #{ link_to "User page", users_url } to delete the profile you created. Visit also the #{ link_to "About page", about_url } to know more about the idea behind this project.".html_safe
 
