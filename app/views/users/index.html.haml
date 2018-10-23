@@ -13,13 +13,12 @@
           %th{scope: 'col'}
             Phone number
           %th{scope: 'col'}
-            Deployment
       %tbody
         - @users.each do |user|
           %tr
             %td= user.name
             %td= user.phone_number
-            %td= user.deployment.description
+            %td= link_to "Delete user", user, method: :delete, data: {confirm: "Are you sure?"}
 
   - else
     There is no registered user at the moment.
