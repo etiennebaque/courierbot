@@ -14,7 +14,7 @@ module Twilio
       description = @sms_body.split[1..sms_body.length].join(' ')
       @message = action_class.new(user: sender, 
                                   description: description, 
-                                  received_at: DateTime.now)
+                                  received_at: datetime_now_with_time_zone)
       @message.process!
     end
 
