@@ -11,7 +11,7 @@
     %li Start sending text messages (commands) to that same number and see them showing up underneath automatically.
 
 %section#needs-reports
-  %h4 Needs & Reports
+  %h4 Needs &amp; Reports
   .container
     .row
       .col
@@ -20,9 +20,8 @@
             %tr
               %th.col Needs
           %tbody
-            - Need.all.each do |need|
-              %tr
-                %td= need.description
+            - Need.order(id: :desc).limit(10).each do |need|
+              = render 'shared/list_item', message: need
 
       .col
         %table.table#report-table
@@ -30,9 +29,8 @@
             %tr
               %th.col Reports
           %tbody
-            - Report.all.each do |report|
-              %tr
-                %td= report.description
+            - Report.order(id: :desc).limit(10).each do |report|
+              = render 'shared/list_item', message: report
 
 %hr
 
