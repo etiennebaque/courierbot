@@ -13,12 +13,12 @@
       %li Then as a user, text 'help me' to +15799771147 to see available commands.
       %li Start sending text messages (commands) to that same number and see them showing up underneath automatically.
 
-%section#needs-reports
+%section#needsReports
   %h4 Needs &amp; Reports
   .container
     .row
       .col
-        %table.table#need-table
+        %table.table#needTable
           %thead
             %tr
               %th.col Needs
@@ -27,7 +27,7 @@
               = render 'shared/list_item', message: need
 
       .col
-        %table.table#report-table
+        %table.table#reportTable
           %thead
             %tr
               %th.col Reports
@@ -37,6 +37,6 @@
 
 %hr
 
-%section#last-words
+%section#lastWords
   %p= "Once you're done, go to the #{ link_to "User page", users_url } to delete the profile you created. Also, find out more #{ link_to "about Courier Bot and the idea behind this project", '#', data: {toggle: 'modal', target: '#aboutModal'} }.".html_safe
 
