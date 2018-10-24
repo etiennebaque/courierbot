@@ -8,7 +8,7 @@ App.cable.subscriptions.create { channel: "UserMessageChannel" },
     $("##{data.id}").effect("highlight", {color: "#{data.highlight}"}, 2000)
 
   createLine: (data) ->
-    "<tr id='#{data.id}'><td>#{data.description} <span class='user-city-note'>(#{data.username})</span></td></tr>"
+    "<tr id='#{data.id}'><td>#{data.description} <span class='reporter'>(#{data.user_time})</span></td></tr>"
 
 
 # App.cable.subscriptions.create { channel: "UserMessageChannel", room: "Request" }

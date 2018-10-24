@@ -12,7 +12,9 @@ module Twilio
       return unless sms_valid?
 
       description = @sms_body.split[1..sms_body.length].join(' ')
-      @message = action_class.new(user: sender, description: description, received_at: DateTime.now)
+      @message = action_class.new(user: sender, 
+                                  description: description, 
+                                  received_at: DateTime.now)
       @message.process!
     end
 
@@ -25,6 +27,7 @@ module Twilio
                                    id: "msg-#{@message.id}",
                                    highlight: highlight,
                                    description: @message.description,
+                                   user_time: @message.user_and_time_desc,
                                    username: sender.name,
                                    type: @message.class.name.downcase)
     end
@@ -59,6 +62,5 @@ module Twilio
     def datetime_now_with_time_zone
       DateTime.now.in_time_zone("Eastern Time (US & Canada)")
     end
-
   end
 end
