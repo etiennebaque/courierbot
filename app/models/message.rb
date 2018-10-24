@@ -14,4 +14,8 @@ class Message < ApplicationRecord
   def to_be_broadcasted?
     true
   end
+
+  def user_and_time_desc
+    "#{user.name}, on #{received_at.strftime('%b %-d %Y, %-l:%M%p')}"
+  end
 end
