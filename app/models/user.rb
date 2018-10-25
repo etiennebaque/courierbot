@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :messages, dependent: :destroy
   validates :name, :phone_number, presence: true
   validate :phone_number_format
 
