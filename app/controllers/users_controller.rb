@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "#{@user.name} (#{@user.phone_number}) has been registered."
+      redirect_to root_path
     else
-      flash[:error] = "Please enter a name and a phone number"
+      render 'home/index'
     end
-    redirect_to root_path
   end
 
   def destroy
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @user.destroy
       flash[:notice] = "#{@user.name}'s profile has been deleted."
     else
-      flash[:error] = "An error ocurred."
+      flash[:alert] = "An error ocurred, please try again later."
     end
     redirect_to users_path
   end

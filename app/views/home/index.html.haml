@@ -6,7 +6,7 @@
     %ul
       %li= "As a admin, register the user who will be texting (their name and phone number):"
       %li.simple-user-form
-        = simple_form_for User.new, method: :post, html: {class: 'form-inline'} do |f|
+        = simple_form_for @user, method: :post, html: {class: 'form-inline'} do |f|
           = f.input :name, label: 'Name: ', class: 'form-control mb-2 mr-sm-2'
           = f.input :phone_number, label: 'Phone number: ', placeholder: 'eg. +12223334444', class: 'form-control mb-2 mr-sm-2'
           = f.button :submit, 'Register', id: 'submit-new-user', class: 'btn btn-primary'
