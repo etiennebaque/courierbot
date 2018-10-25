@@ -4,7 +4,7 @@ App.cable.subscriptions.create { channel: "UserMessageChannel" },
 
   appendLine: (data) ->
     html = @createLine(data)
-    $(html).prependTo "##{data.type}-table > tbody"
+    $(html).prependTo "##{data.type}Table > tbody"
     $("##{data.id}").effect("highlight", {color: "#{data.highlight}"}, 2000)
 
   createLine: (data) ->
