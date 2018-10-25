@@ -31,5 +31,5 @@
       .col-12.col-md-6
         = simple_form_for(User.new) do |f|
           = f.input :name, label: 'Name', error: 'The name is mandatory, please specify one'
-          = f.input :phone_number, placeholder: 'eg. +16471112222'
+          = f.input :phone_number, placeholder: 'eg. +12223334444'
           = f.button :submit, id: 'submit-new-user', class: 'btn btn-primary'
