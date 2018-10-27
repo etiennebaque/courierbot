@@ -16,6 +16,6 @@ class Message < ApplicationRecord
   end
 
   def user_and_time_desc
-    "#{user.name}, on #{received_at.strftime('%b %-d %Y, %-l:%M%p')}"
+    "#{user.name}, on #{received_at.strftime('%b %-d %Y, %-l:%M%p')} UTC"
   end
 end
