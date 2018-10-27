@@ -4,7 +4,9 @@ Courier Bot is a simple SMS reporting proof-of-concept. This application is the 
 
 This project was built using Rails 5. It's using the TwilioSMS API and websockets through Rails 5 ActionCable. It also uses Devise for authentication, Bootstrap 4, and Redis.
 
-# Development
+Demo: https://courier-bot.etiennebaque.com (login: demo@example.com - password: sms_is_alive)
+
+## Development
 ```
 git clone git@github.com:etiennebaque/courierbot.git
 cd courierbot && bundle install
@@ -12,7 +14,7 @@ rails db:setup
 rails s # App can be reached at http://localhost:3000
 ```
 
-## Dependencies
+## Third-party services
 2 more things before you get started
 - (development only) Install [Ngrok](https://ngrok.com/) and run `./ngrok http 3000` to make your Rails app accessible publicly, via a secure tunnel.
 - You need to sign up to [Twilio](https://www.twilio.com). 
