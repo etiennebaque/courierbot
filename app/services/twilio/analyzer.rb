@@ -14,7 +14,7 @@ module Twilio
       description = @sms_body.split[1..sms_body.length].join(' ')
       @message = action_class.new(user: sender, 
                                   description: description, 
-                                  received_at: datetime_now_with_time_zone)
+                                  received_at: DateTime.now.new_offset(0))
       @message.process!
     end
 
@@ -59,8 +59,5 @@ module Twilio
       action_text.constantize rescue nil
     end
 
-    def datetime_now_with_time_zone
-      DateTime.now.in_time_zone("Eastern Time (US & Canada)")
-    end
   end
 end
