@@ -1,7 +1,6 @@
 class Need < Message
 
   STREAM_NAME = 'user_message_need'
-  HIGHLIGHT_COLOR = '#90f431'
 
   def process!
     save!

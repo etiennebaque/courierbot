@@ -22,10 +22,8 @@ module Twilio
       return unless sms_valid? && broadcast?
 
       channel_stream = @message.class::STREAM_NAME
-      highlight = @message.class::HIGHLIGHT_COLOR
       ActionCable.server.broadcast(channel_stream,
                                    id: "msg-#{@message.id}",
-                                   highlight: highlight,
                                    description: @message.description,
                                    user_time: @message.user_and_time_desc,
                                    username: sender.name,
