@@ -12,11 +12,11 @@ rails db:setup
 rails s # App can be reached at http://localhost:3000
 ```
 
-# Dependencies
+## Dependencies
 2 more things before you get started
-- (development only). Install (Ngrok)[https://ngrok.com/] and run `./ngrok http 3000` to make your Rails app accessible publicly, via a secure tunnel.
-- You need to sign up to (Twilio)[https://www.twilio.com]. 
--- Once you got access to the Twilio console, get a (new phone number for incoming messages)[https://www.twilio.com/console/phone-numbers/incoming]. 
+- (development only) Install [Ngrok](https://ngrok.com/) and run `./ngrok http 3000` to make your Rails app accessible publicly, via a secure tunnel.
+- You need to sign up to [Twilio](https://www.twilio.com). 
+-- Once you got access to the Twilio console, get a [new phone number for incoming messages](https://www.twilio.com/console/phone-numbers/incoming).
 -- If you're using Twilio in dev, enter your ngrok url in the Messaging section of your Twilio phone number page.
 -- You will then have to set up these three environment variables locally, with values from your Twilio console, so that you can send text messages to your app:
   ```
