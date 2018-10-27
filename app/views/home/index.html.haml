@@ -1,41 +1,42 @@
 %section#intro
-  %p Courier bot is a simple chatbot demo. Its aim is to enable frontliners to send text messages for quick and easy reporting to admins. To get started:
-  %ul
-    %li= "As a admin, register the frontliner (their name and phone number):"
-    %li.simple-user-form
-      = simple_form_for User.new, method: :post, html: {class: 'form-inline'} do |f|
-        = f.input :name, label: 'Name: ', class: 'form-control mb-2 mr-sm-2'
-        = f.input :phone_number, label: 'Phone number: ', placeholder: 'eg. +12223334444', class: 'form-control mb-2 mr-sm-2'
-        = f.button :submit, 'Register', id: 'submit-new-user', class: 'btn btn-primary'
-    %li Then as a frontliner, text 'help me' to +15799771147 to see available commands.
-    %li Start sending text messages (commands) to that same number and see them showing up underneath automatically.
+  %p Courier bot is a simple chatbot demo. Its aim is to enable people on the frontline to send text messages for quick and easy reporting to admins.
 
-%section#needs-reports
-  %h4 Needs & Reports
+  %div#instructions
+    To get started:
+    %ul
+      %li= "As a admin, register the user who will be texting (their name and phone number):"
+      %li.simple-user-form
+        = simple_form_for @user, method: :post, html: {class: 'form-inline'} do |f|
+          = f.input :name, label: 'Name: ', class: 'form-control mb-2 mr-sm-2'
+          = f.input :phone_number, label: 'Phone number: ', placeholder: 'eg. +12223334444', class: 'form-control mb-2 mr-sm-2'
+          = f.button :submit, 'Create user', id: 'submit-new-user', class: 'btn btn-primary'
+      %li Then as a user, text 'help me' to +15799771147 to see available commands.
+      %li Start sending text messages (commands) to that same number. They'll be showing up in the "Needs &amp; Reports" list underneath automatically.
+
+%section#needsReports
+  %h4 Needs &amp; Reports
   .container
     .row
       .col
-        %table.table#need-table
+        %table.table#needTable
           %thead
             %tr
               %th.col Needs
           %tbody
-            - Need.all.each do |need|
-              %tr
-                %td= need.description
+            - Need.order(id: :desc).limit(10).each do |need|
+              = render 'shared/list_item', message: need
 
       .col
-        %table.table#report-table
+        %table.table#reportTable
           %thead
             %tr
               %th.col Reports
           %tbody
-            - Report.all.each do |report|
-              %tr
-                %td= report.description
+            - Report.order(id: :desc).limit(10).each do |report|
+              = render 'shared/list_item', message: report
 
 %hr
 
-%section#last-words
-  %p= "Once you're done, go to the #{ link_to "User page", users_url } to delete the profile you created. Visit also the #{ link_to "About page", about_url } to know more about the idea behind this project.".html_safe
+%section#lastWords
+  %p= "Once you're done, go to the #{ link_to "User page", users_url } to delete the profile you created. Also, find out more #{ link_to "about Courier Bot and the idea behind this project", '#', data: {toggle: 'modal', target: '#aboutModal'} }.".html_safe
 

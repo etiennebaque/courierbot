@@ -1,0 +1,19 @@
+#aboutModal.modal.fade{"aria-hidden": "true", "aria-labelledby": "aboutModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %h5#aboutModalLabel.modal-title About Courier Bot
+        %button.close{"aria-label": "Close", "data-dismiss": "modal", type: "button"}
+          %span{"aria-hidden": "true"} ×
+      .modal-body
+        %p= "Courier Bot is a simple SMS reporting proof-of-concept. This application is the result of observations made by reading about projects used in humanitarian aid and disaster relief over the past years (projects such as #{ link_to 'FrontlineSMS', 'https://www.frontlinesms.com/', target: '_blank'}, #{ link_to 'Ushahidi', 'https://www.ushahidi.com/', target: '_blank'}, #{ link_to 'Needslist', 'https://needslist.co/', target: '_blank'}...).".html_safe
+
+        %p= "Courier Bot is for demo-purpose only. Its source code can be found #{ link_to 'on Github', 'https://github.com/etiennebaque/courierbot', target: '_blank' }.".html_safe
+
+        %p= "This project was built using Rails 5. It's using the #{ link_to 'TwilioSMS', 'https://www.twilio.com/', target: '_blank'} API and websockets through Rails 5 #{ link_to 'ActionCable', 'https://guides.rubyonrails.org/action_cable_overview.html', target: '_blank'}. It also uses Devise for authentication, Bootstrap 4, and Redis.".html_safe
+
+        %p= "If you have any questions or feedback, please feel free to send me an email at #{ link_to 'mail@etiennebaque.com', 'mailto:mail@etiennebaque.com' }.".html_safe
+
+        %p= "Thanks for giving Courier Bot a try! :-)"
+      .modal-footer
+        %button.btn.btn-primary{"data-dismiss": "modal", type: "button"} Close

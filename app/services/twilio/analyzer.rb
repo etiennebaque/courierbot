@@ -9,15 +9,17 @@ module Twilio
     end
 
     def read_sms_and_create_message!
-      if sms_valid?
-        description = @sms_body.split[1..sms_body.length].join(' ')
-        @message = action_class.new(user: sender, description: description)
-        @message.process!
-      end
+      return unless sms_valid?
+
+      description = @sms_body.split[1..sms_body.length].join(' ')
+      @message = action_class.new(user: sender, 
+                                  description: description, 
+                                  received_at: datetime_now_with_time_zone)
+      @message.process!
     end
 
     def broadcast_message
-      return unless sms_valid? && broadcast? 
+      return unless sms_valid? && broadcast?
 
       channel_stream = @message.class::STREAM_NAME
       highlight = @message.class::HIGHLIGHT_COLOR
@@ -25,6 +27,7 @@ module Twilio
                                    id: "msg-#{@message.id}",
                                    highlight: highlight,
                                    description: @message.description,
+                                   user_time: @message.user_and_time_desc,
                                    username: sender.name,
                                    type: @message.class.name.downcase)
     end
@@ -56,5 +59,8 @@ module Twilio
       action_text.constantize rescue nil
     end
 
+    def datetime_now_with_time_zone
+      DateTime.now.in_time_zone("Eastern Time (US & Canada)")
+    end
   end
 end
