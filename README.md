@@ -1,6 +1,6 @@
 # Courier Bot
 
-Courier Bot is a simple SMS reporting proof-of-concept. This application is the result of observations made by reading about projects used in humanitarian aid and disaster relief over the past years (projects such as [FrontlineSMS](https://www.frontlinesms.com/), [Ushahidi](https://www.ushahidi.com/), [Needslist](https://needslist.co/)...).
+Courier Bot is a simple SMS reporting proof of concept. This application is the result of observations made by reading about projects used in humanitarian aid and disaster relief over the past years (projects such as [FrontlineSMS](https://www.frontlinesms.com/), [Ushahidi](https://www.ushahidi.com/), [Needslist](https://needslist.co/)...).
 
 This project was built using Rails 5. It's using the TwilioSMS API and websockets through Rails 5 ActionCable. It also uses Devise for authentication, Bootstrap 4, and Redis.
 
