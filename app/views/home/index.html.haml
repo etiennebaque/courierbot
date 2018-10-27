@@ -9,9 +9,9 @@
         = simple_form_for @user, method: :post, html: {class: 'form-inline'} do |f|
           = f.input :name, label: 'Name: ', class: 'form-control mb-2 mr-sm-2'
           = f.input :phone_number, label: 'Phone number: ', placeholder: 'eg. +12223334444', class: 'form-control mb-2 mr-sm-2'
-          = f.button :submit, 'Register', id: 'submit-new-user', class: 'btn btn-primary'
+          = f.button :submit, 'Create user', id: 'submit-new-user', class: 'btn btn-primary'
       %li Then as a user, text 'help me' to +15799771147 to see available commands.
-      %li Start sending text messages (commands) to that same number and see them showing up underneath automatically.
+      %li Start sending text messages (commands) to that same number. They'll be showing up in the "Needs &amp; Reports" list underneath automatically.
 
 %section#needsReports
   %h4 Needs &amp; Reports
