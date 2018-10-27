@@ -1,4 +1,13 @@
 App.cable.subscriptions.create { channel: "UserMessageChannel" },
+  connected: ->
+    console.log 'connected'
+
+  disconnected: ->
+    console.log 'disconnected'
+
+  rejected: ->
+    console.log 'rejected'
+
   received: (data) ->
     @appendLine(data)
 
