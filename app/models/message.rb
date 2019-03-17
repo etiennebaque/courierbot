@@ -3,6 +3,8 @@ class Message < ApplicationRecord
 
   attr_accessor :text_errors
 
+  DATE_TIME_FORMAT = '%b %-d %Y, %-l:%M%p'
+
   def process!
     nil
   end
@@ -16,6 +18,14 @@ class Message < ApplicationRecord
   end
 
   def user_and_time_desc
-    "#{user.name}, on #{received_at.strftime('%b %-d %Y, %-l:%M%p')} UTC"
+    "#{user.name}, on #{date_time_desc} UTC"
+  end
+
+  def date_time_desc
+    received_at.strftime(DATE_TIME_FORMAT)
+  end
+
+  def date_format
+    DATE_TIME_FORMAT
   end
 end
